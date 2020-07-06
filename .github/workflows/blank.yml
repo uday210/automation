@@ -17,6 +17,8 @@ jobs:
           mkdir sfdx-cli
           tar xJf sfdx-linux-amd64.tar.xz -C sfdx-cli --strip-components 1
           ./sfdx-cli/install
+      - name: List orgs 1
+        run: 'sfdx force:org:list'    
       - name: Auth with the DevHub
         run: 'sfdx force:auth:sfdxurl:store -f token.txt -a DevHub -d'
       - name: Create scratch org
