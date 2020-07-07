@@ -10,6 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2              
       - name: Write the token into a file
+      - run: 'echo ${{ secrets.DEVHUB_TOKEN}} > token.txt'
       # ESlint
       - name: 'Lint Lightning Web Components'
         run: npm run lint:lwc  
